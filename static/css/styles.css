@@ -1,0 +1,367 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url("../images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Navbar */
+nav {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+/* Profile Section */
+/* Profile Section */
+.profile {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.profile span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.profile .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ensures it appears directly below the span */
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.profile:hover .dropdown,
+.profile .dropdown:hover {
+    display: block; /* Keeps the dropdown visible while hovering */
+}
+
+.dropdown a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dropdown a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Login Page */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-box h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.login-box h1 span {
+    color: #a29bfe;
+    font-weight: bold;
+}
+
+.login-box input,
+.login-box button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-box button {
+    background: #6c5ce7;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-box button:hover {
+    background: #4b4ca0;
+}
+
+.login-box a {
+    color: #6c5ce7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Blurred Background */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('{{ url_for("static", filename="images/background.jpg") }}') no-repeat center center/cover;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+/* Profile Section */
+.profile-section {
+    position: absolute;
+    top: 20px; /* Position at the top-right */
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile Icon */
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    object-fit: cover; /* Ensures the image is fully displayed */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.dropdown-menu a:hover {
+    background: #f4f4f4;
+}
+
+/* Content Section */
+.content-container {
+    position: absolute;
+    top: 50%; /* Centered vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: white;
+}
+
+/* Description Text */
+.content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: #FFD700; /* Gold highlight for "BillWise" */
+}
+
+.content p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* Upload Container */
+.upload-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.upload-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.upload-box h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.upload-box h1 span {
+    color: #a29bfe;
+    font-weight: bold;
+}
+
+.upload-box input[type="file"] {
+    display: block;
+    margin: 10px auto;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.upload-box button {
+    background: #6c5ce7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.upload-box button:hover {
+    background: #4b4ca0;
+}
+
+/* Upload Button */
+.upload-button {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    background: #6a1b9a;
+    color: #;
+    border: 2px solid #6a1b9a;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.upload-button:hover {
+    background: #6a1b9a;
+    color: white;
+}
+
+/* History Button */
+.history-button {
+    position: fixed;
+    bottom: 20px;
+    right: 140px;
+    background: #ffffff;
+    color: #6a1b9a;
+    border: 2px solid #6a1b9a;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.history-button:hover {
+    background: #6a1b9a;
+    color: white;
+}
+
+/* History Section */
+.history-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.images-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.image-item {
+    text-align: center;
+}
+
+.image-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.image-item img:hover {
+    transform: scale(1.1);
+}
+
+.image-item p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+}

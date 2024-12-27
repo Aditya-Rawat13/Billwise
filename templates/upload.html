@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Invoice - BillWise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">BillWise</div>
+        <div class="profile">
+            <span>menu {{ user_name }}</span>
+            <div class="dropdown">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/history">History</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+    <div class="upload-container">
+        <div class="upload-box">
+            <h1>Upload Your <span>Invoice</span></h1>
+            {% if error %}
+            <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+                <input type="file" id="file-upload" name="file" accept=".jpg, .jpeg, .png" required>
+                <button type="submit">Upload</button>
+            </form>
+            {% if success %}
+            <p style="color: green;">File uploaded successfully!</p>
+            {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>

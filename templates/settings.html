@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - BillWise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        <form method="POST" action="/settings" enctype="multipart/form-data">
+            <label for="profile_picture">Upload Profile Picture:</label>
+            <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
+            <button type="submit">Save Changes</button>
+        </form>
+        <a href="/dashboard">Back to Dashboard</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+train: C:/Users/rawat/Documents/proramming/final_ocr/Dataset/train/images
+val: C:/Users/rawat/Documents/proramming/final_ocr/Dataset/valid/images
+test: C:/Users/rawat/Documents/proramming/final_ocr/Dataset/test/images
+
+nc: 4
+names: ['company_name', 'date', 'item_name', 'total']
+
+roboflow:
+  workspace: minorproject-f1efr
+  project: invoiceocr-xrxxd
+  version: 6
+  license: MIT
+  url: https://universe.roboflow.com/minorproject-f1efr/invoiceocr-xrxxd/dataset/6 python train.py --img-size 640 --batch-size 16 --epochs 50 --data ./dataset.yaml --cfg ./models/yolov5s.yaml --weights yolov5s.pt
+ 

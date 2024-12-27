@@ -1,0 +1,12 @@
+<nav>
+    <div class="logo">BillWise</div>
+    {% if session.get('user') %}
+    <div class="profile">
+        <span>{{ session.get('user') }}</span>
+        <div class="dropdown">
+            <a href="#">Profile</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+    {% endif %}
+</nav>

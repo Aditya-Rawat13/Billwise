@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History - BillWise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">BillWise</div>
+        <div class="profile">
+            <span>menu {{ session.get('user_name') }}</span>
+            <div class="dropdown">
+                <a href="/dashboard">Dashboard</a>
+                <a href="/history">History</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="content-container">
+            <h1>History</h1>
+            <div class="history-list">
+                {% for item in history_items %}
+                <div class="history-item">
+                    <p><strong>Uploaded on:</strong> {{ item.upload_time|datetimeformat }}</p>
+                    <img src="{{ url_for('static', filename=item.image) }}" alt="Uploaded Bill" class="history-image">
+                    <a href="{{ url_for('download_csv', filename=item.csv) }}" class="data-button">Download Data</a>
+                </div>
+                {% else %}
+                <p>No upload history found.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

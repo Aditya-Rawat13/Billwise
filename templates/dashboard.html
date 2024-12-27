@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BillWise</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("profile-dropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Blurred Background -->
+        <div class="background-image"></div>
+    
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <img 
+                src="{{ url_for('static', filename=user_profile_picture) if user_profile_picture else url_for('static', filename='images/pro.jpg') }}" 
+                alt="Profile" 
+                class="profile-icon" 
+                onclick="toggleDropdown()"
+            >
+            <div id="profile-dropdown" class="dropdown-menu">
+                <a href="/settings">Settings</a>
+                <a href="/logout">Log Out</a>
+            </div>
+        </div>
+        
+      <!-- <!-- History Button -->
+<!--    <a href="/history" class="history-button">History</a>-->
+    <!-- History Button -->
+<!--<a href="/history" class="history-button">History</a> -->
+
+    
+        <!-- Content Section -->
+        <div class="content-container">
+            <div class="content">
+                <h1>Welcome to <span>BillWise</span>, {{ username }}!</h1>
+                <p>Here you can manage your expenses and review your reports.</p>
+            </div>
+        </div>
+    
+        <!-- Upload Button -->
+        <a href="/upload" class="upload-button">Upload</a>
+    </div>
+        </div>
+
+            <!-- Main Content -->
+            <div class="content">
+                <h1>Welcome to <span>BillWise</span>, {{ username }}!</h1>
+                <p>Here you can manage your expenses and review your reports.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
